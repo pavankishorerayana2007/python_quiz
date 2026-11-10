@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d18">
+  <title>Python Quiz Master</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">Py</span><span>QUIZ<span class="brand-light">MASTER</span></span></a>
+      <div class="top-tag"><span class="live-dot"></span> PYTHON KNOWLEDGE CHECK</div>
+    </header>
+
+    <section id="welcome" class="welcome-screen">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> LEARN · THINK · LEVEL UP</div>
+        <h1>Prove your<br><span>Python skills.</span></h1>
+        <p class="hero-description">A focused challenge to test what you know, strengthen what you don't, and track your progress across three levels.</p>
+        <div class="hero-stats">
+          <div><strong>03</strong><span>LEVELS</span></div>
+          <i></i><div><strong>15</strong><span>QUESTIONS</span></div>
+          <i></i><div><strong>01</strong><span>MISSION</span></div>
+        </div>
+        <button id="startBtn" class="primary-btn">Start the challenge <span>↗</span></button>
+        <p class="micro-copy">No time limit · Instant explanations · One step at a time</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="code-card">
+          <div class="code-head"><span></span><span></span><span></span><small>python.py</small></div>
+          <div class="code-body">
+            <p><b>01</b> <span class="purple">def</span> <span class="cyan">level_up</span>():</p>
+            <p><b>02</b> &nbsp;&nbsp;skills = <span class="orange">"Python"</span></p>
+            <p><b>03</b> &nbsp;&nbsp;<span class="purple">return</span> <span class="green">keep_learning</span></p>
+            <p><b>04</b></p>
+            <p><b>05</b> <span class="cyan">level_up</span>() <span class="comment"># your move</span></p>
+          </div>
+          <div class="code-footer"><span class="terminal-dot"></span> READY TO RUN <span class="footer-right">PY 3.x</span></div>
+        </div>
+        <div class="floating-chip chip-top"> <span>✦</span> THINK LIKE A DEVELOPER</div>
+        <div class="floating-chip chip-bottom"><strong>15</strong><span>questions<br>to mastery</span></div>
+      </div>
+    </section>
+
+    <section id="quiz" class="quiz-screen hidden">
+      <div class="quiz-heading">
+        <div><div class="eyebrow"><span class="eyebrow-line"></span> YOUR CHALLENGE</div><h2 id="levelTitle">Level 1</h2></div>
+        <div class="question-count"><strong id="questionNumber">01</strong><span id="questionTotal">/ 05</span></div>
+      </div>
+      <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+      <div class="level-track">
+        <div class="level-step active" id="step1"><span>01</span><small>BEGINNER</small></div>
+        <div class="track-line"></div>
+        <div class="level-step" id="step2"><span>02</span><small>INTERMEDIATE</small></div>
+        <div class="track-line"></div>
+        <div class="level-step" id="step3"><span>03</span><small>ADVANCED</small></div>
+      </div>
+      <article class="question-card">
+        <div class="question-meta"><span id="questionLabel">QUESTION 01</span><span class="points">+ 1 POINT</span></div>
+        <h3 id="questionText">Loading question...</h3>
+        <div id="options" class="options-grid"></div>
+        <div id="feedback" class="feedback hidden"></div>
+        <div class="question-actions"><span id="answerHint">SELECT ONE ANSWER</span><button id="nextBtn" class="primary-btn" disabled>Continue <span>→</span></button></div>
+      </article>
+      <div class="quiz-bottom"><span><span class="live-dot"></span> PROGRESS SAVED FOR THIS SESSION</span><span id="scorePreview">SCORE: 0</span></div>
+    </section>
+
+    <section id="result" class="result-screen hidden">
+      <div class="result-icon">✦</div>
+      <div class="eyebrow"><span class="eyebrow-line"></span> CHALLENGE COMPLETE</div>
+      <h2 id="resultTitle">Well played.</h2>
+      <p class="result-subtitle">You've reached the end of Python Quiz Master. Here's how you performed.</p>
+      <div class="score-panel"><span class="score-label">YOUR FINAL SCORE</span><div class="score-number"><strong id="finalScore">0</strong><span>/ 15</span></div><div class="result-progress"><div id="resultBar"></div></div><strong id="performance" class="performance">Good work!</strong></div>
+      <div class="result-stats">
+        <div><strong id="correctCount">0</strong><span>CORRECT</span></div><div><strong id="wrongCount">0</strong><span>INCORRECT</span></div><div><strong id="percentage">0%</strong><span>ACCURACY</span></div>
+      </div>
+      <button id="restartBtn" class="primary-btn">Play again <span>↻</span></button>
+    </section>
+    <footer class="footer"><span>PYTHON QUIZ MASTER</span><span>BUILT TO MAKE YOU BETTER.</span></footer>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
